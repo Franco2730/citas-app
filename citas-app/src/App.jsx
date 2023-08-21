@@ -7,8 +7,12 @@ function App() {
   return (//Todos los componentes / funciones deben tener un return. 
      <div className="container mx-auto mt-20">
         <Header />
-        <Formulario/>
-        <ListaPacientes/>
+
+        <div className="mt-12 md:flex">
+          <Formulario/>
+          <ListaPacientes/>
+        </div>
+        
     </div>
   )
 }
