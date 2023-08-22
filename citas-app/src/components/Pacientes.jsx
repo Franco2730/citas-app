@@ -24,11 +24,11 @@ const Pacientes = () => {
       <p className="font-bold mb-3 text-gray-700 uppercase">
         Sintomas:
         <span className="font-normal normal-case">
+
           {" "}
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus
           eum maiores id voluptas dolore ullam velit perferendis voluptatem
-          assumenda, eveniet enim vero reprehenderit suscipit, vel provident aut
-          adipisci rem officia!
+          assumenda, eveniet enim vero reprehenderit suscipit!
         </span>
       </p>
     </div>
