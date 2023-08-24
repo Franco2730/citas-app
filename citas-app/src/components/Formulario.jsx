@@ -19,6 +19,7 @@ const Formulario = () => {
             className="block text-gray-700 uppercase font-bold"
           >
             {/* htmlFor elegimos un nombre(igual al id del input para que sea facil el acceso para todas las personas. block para...... text-gray para el color del texto ) */}
+
             Nombre Mascota:
           </label>
 
@@ -28,6 +29,7 @@ const Formulario = () => {
             placeholder="Eje: Conan, Kenya, Magui, Daky"
             className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
           />
+          
         </div>
 
         <div className="mt-5">
