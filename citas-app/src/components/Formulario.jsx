@@ -29,7 +29,7 @@ const Formulario = () => {
             placeholder="Eje: Conan, Kenya, Magui, Daky"
             className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
           />
-          
+
         </div>
 
         <div className="mt-5">
@@ -97,6 +97,7 @@ const Formulario = () => {
           type="submit"
           className="bg-indigo-600 w-full p-3 text-white uppercase font-bold hover:bg-indigo-800 cursor-pointer transition-all"
           value="Agregar paciente"
+          
         />
       </form>
     </div>
