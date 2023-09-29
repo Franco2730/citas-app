@@ -1,6 +1,10 @@
 import { useState, useEffect } from 'react' 
 
 const Formulario = () => {
+
+  //Vamos a trabajar con nuestro useState
+
+ 
   return (
     <div className="md:w-1/2 lg:w-2/5">
       <h2 className="font-black text-3xl text-center">
