@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react'
 
 const Formulario = () => {
 
-  //Vamos a trabajar con nuestro useState
+//Vamos a trabajar con nuestro useState y la primer regla para nuestros hooks es colocarlos al principio de nuestros componentes. 
+const[nombre, setNombre] = useState(''); 
 
  
   return (
@@ -32,6 +33,12 @@ const Formulario = () => {
             type="text"
             placeholder="Eje: Conan, Kenya, Magui, Daky"
             className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+
+            //El siguiente campo (value) es para almacenar en la variable nombre lo que el usuario tipee. 
+            value={nombre}
+
+            //Vamos a acudir a un evento propio de React. Es igual a un eventListTener de JS. se llama onChange. Entonces, cada vez que el usuario este escribiendo en este campo, en la consola aparecerá Escribiendo...
+            onChange={ () => console.log('Escribiendo...') }
           />
 
         </div>
