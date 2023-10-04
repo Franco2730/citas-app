@@ -23,7 +23,7 @@ const[nombre, setNombre] = useState('');
             htmlFor="mascota"
             className="block text-gray-700 uppercase font-bold"
           >
-            {/* htmlFor elegimos un nombre(igual al id del input para que sea facil el acceso para todas las personas. block para...... text-gray para el color del texto ) */}
+            {/* htmlFor elegimos un nombre(igual al id del input para que sea facil el acceso para todas las personas. block para...... text-gray para el color del texto ) */} 
 
             Nombre Mascota:
           </label>
