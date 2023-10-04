@@ -5,7 +5,7 @@ const Formulario = () => {
 //Vamos a trabajar con nuestro useState y la primer regla para nuestros hooks es colocarlos al principio de nuestros componentes. 
 const[nombre, setNombre] = useState(''); 
 
- 
+  
   return (
     <div className="md:w-1/2 lg:w-2/5">
       <h2 className="font-black text-3xl text-center">
