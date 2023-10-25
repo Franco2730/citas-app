@@ -19,15 +19,14 @@ const handleSubmit = (e) => {
   e.preventDefault();     
 
   //A continuacion vamos a validar el formulario:
-  if([ nombre, dueño, email, fecha, sintomas ].includes('')){
+  if([ nombre, dueño, email, fecha, sintomas ].includes('')){ //Si al menos un campo esta vacío, entonces...
     console.log("Hay al menos un campo vacío")
 
-    setError(true);
-  } else {
-    console.log("Todos los campos se encuentran completos");
+    setError(true)
+    return;
   }
-
-  console.log("Enviando formulario");     
+    setError(false);
+ 
 }     
      
        
@@ -46,10 +45,10 @@ const handleSubmit = (e) => {
             onSubmit={handleSubmit}
             className="bg.white shadow-md rounded-lg py-10 px-5 mb-10">
 
-        { error && 
-          <div>
+        { error &&  
+          (<div className='bg-red-800 text-white text-center p-3 uppercase font-bold mb-3 rounded-md'>
             <p>Todos los campos son obligatorios</p>
-          </div> }
+          </div>) }
 
         <div className='mb-5'>
           <label htmlFor="mascota" className="block text-gray-700 uppercase font-bold">
