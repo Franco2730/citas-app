@@ -1,9 +1,5 @@
 //A continuación vamos a acceder a la props que le pasamos al Header en el archivo App
-const Header = ({ toma1Valor }) => {
-
-  const variableHeader = true;
-
-  toma1Valor(variableHeader);
+const Header = () => {
 
   return (
     //Todos los componentes necesitan un return que devuelvan un solo elemento en su mayor nivel (algo que envuelva a todos los elementos)

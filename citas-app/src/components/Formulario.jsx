@@ -26,6 +26,10 @@ const handleSubmit = (e) => {
     return;
   }
     setError(false);
+
+
+
+    setPacientes(nombre);
  
 }     
      
