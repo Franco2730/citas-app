@@ -18,6 +18,7 @@ const[error, setError] = useState(false);
 const handleSubmit = (e) => {     
   e.preventDefault();     
 
+  0
   //A continuacion vamos a validar el formulario:
   if([ nombre, dueño, email, fecha, sintomas ].includes('')){ //Si al menos un campo esta vacío, entonces...
     console.log("Hay al menos un campo vacío")
