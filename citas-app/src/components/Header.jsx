@@ -1,5 +1,6 @@
-//A continuación vamos a acceder a la props que le pasamos al Header en el archivo App
+//A continuación vamos a acceder a la props que le pasamos al Header en el archivo App para ello, vamos a colocar props avisandole que va a recibir unas. 
 const Header = () => {
+
 
   return (
     //Todos los componentes necesitan un return que devuelvan un solo elemento en su mayor nivel (algo que envuelva a todos los elementos)

@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react' 
+import Error from './Error';
 
-const Formulario = () => {
+
+//Vamos a extraer la funcion seteadora llamada setPacientes aplicandole un destructuring.
+const Formulario = ({ pacientes, setPacientes }) => {
 
 //Vamos a trabajar con nuestro useState y la primer regla para nuestros hooks es colocarlos al principio de nuestros componentes. 
 const[nombre, setNombre] = useState('');   
@@ -28,10 +31,25 @@ const handleSubmit = (e) => {
   }
     setError(false);
 
+    //Objeto de paciente
+    const objetoPaciente = {
+      nombre, 
+      dueño,
+      email,
+      fecha, 
+      sintomas
+    }
 
+    //A continuacion, con la funcion seteadora de paciente decimos que haga una copia de lo que ya hay en pacientes y le agrega el nuevo objeto.
+    setPacientes([ ...pacientes, objetoPaciente ]);
 
-    setPacientes(nombre);
- 
+    
+    //A continuacion vamos a reiniciar el formulario colocando todos los campos como str vacios.
+    setNombre('')
+    setDueño('')
+    setEmail('')
+    setFecha('')
+    setSintomas('')
 }     
      
        
@@ -50,10 +68,7 @@ const handleSubmit = (e) => {
             onSubmit={handleSubmit}
             className="bg.white shadow-md rounded-lg py-10 px-5 mb-10">
 
-        { error &&  
-          (<div className='bg-red-800 text-white text-center p-3 uppercase font-bold mb-3 rounded-md'>
-            <p>Todos los campos son obligatorios</p>
-          </div>) }
+        { error && <Error mensaje= 'Todos los campos son obligatorios'/>}
 
         <div className='mb-5'>
           <label htmlFor="mascota" className="block text-gray-700 uppercase font-bold">

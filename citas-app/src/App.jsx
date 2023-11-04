@@ -10,15 +10,16 @@ function App() {
   return (
     //Todos los componentes / funciones deben tener un return.
     <div className="container mx-auto mt-20">
-      <Header
-        numeros= { 1 }
-      />
+      <Header/>
 
       <div className="mt-12 md:flex">
         <Formulario 
-          setPacientes = { setPacientes }
+          pacientes = { pacientes }
+          setPacientes = { setPacientes } //Acá vamos a pasar la funcion seteadora de pacientes ya que en formulario se estarán efectuando los cambios.
         />
+
         <ListaPacientes />
+        
       </div>
     </div>
   );
