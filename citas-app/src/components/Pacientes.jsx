@@ -1,39 +1,36 @@
-const Pacientes = () => { 
+const Paciente = ({ paciente }) => { 
+
+  const{ nombre, dueño, email, fecha, sintomas } = paciente
+
   return (
     
     <div className="mx-5 my-10 bg-white shadow-md px-5 py-10 rounded-xl">
       <p className="font-bold mb-3 text-gray-700 uppercase">
-        Nombre:
-        <span className="font-normal normal-case"> Hook</span>
+        Nombre:  
+        <span className="font-normal normal-case"> { nombre }</span>
       </p>
 
       <p className="font-bold mb-3 text-gray-700 uppercase">
-        Nombre Dueño:
-        <span className="font-normal normal-case"> Franco</span>
+        Nombre Dueño:  
+        <span className="font-normal normal-case"> { dueño }</span>
       </p>
 
       <p className="font-bold mb-3 text-gray-700 uppercase">
-        Email:
-        <span className="font-normal normal-case"> correo@gmail.com </span>
+        Email:  
+        <span className="font-normal normal-case"> { email }</span>
       </p>
 
       <p className="font-bold mb-3 text-gray-700 uppercase">
-        Nombre:
-        <span className="font-normal normal-case"> 10/06/2023/</span>
+        Nombre:  
+        <span className="font-normal normal-case"> { fecha }</span>
       </p>
 
       <p className="font-bold mb-3 text-gray-700 uppercase">
-        Sintomas:
-        <span className="font-normal normal-case">
-
-          {" "}
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus
-          eum maiores id voluptas dolore ullam velit perferendis voluptatem
-          assumenda, eveniet enim vero reprehenderit suscipit!
-        </span>
+        Sintomas:  
+        <span className="font-normal normal-case"> { sintomas }</span>
       </p>
     </div>
   );
 };
 
-export default Pacientes;
+export default Paciente;

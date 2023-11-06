@@ -18,7 +18,9 @@ function App() {
           setPacientes = { setPacientes } //Acá vamos a pasar la funcion seteadora de pacientes ya que en formulario se estarán efectuando los cambios.
         />
 
-        <ListaPacientes />
+        <ListaPacientes 
+          pacientes = { pacientes }
+        />
         
       </div>
     </div>

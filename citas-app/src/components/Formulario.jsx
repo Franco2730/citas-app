@@ -17,6 +17,13 @@ const[sintomas, setSintomas] = useState('');
 //Creamos un estado para la validacion del formulario:
 
 const[error, setError] = useState(false);
+
+const generarId = () => {
+  const random = Math.random().toString(36).substring(2);
+  const fecha = Date.now().toString(36);
+
+  return random + fecha;
+}
      
 const handleSubmit = (e) => {     
   e.preventDefault();     
@@ -37,7 +44,8 @@ const handleSubmit = (e) => {
       dueño,
       email,
       fecha, 
-      sintomas
+      sintomas,
+      id: generarId()
     }
 
     //A continuacion, con la funcion seteadora de paciente decimos que haga una copia de lo que ya hay en pacientes y le agrega el nuevo objeto.
