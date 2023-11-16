@@ -6,6 +6,8 @@ import ListaPacientes from "./components/ListaPacientes";
 function App() {
 
   const [ pacientes, setPacientes ] = useState([]);
+  // A continuación, vamos a detallar la varable y la fn seteadora de dicha variable, para editar al paciente:
+  const [paciente, setPaciente] = useState({});
 
   return (
     //Todos los componentes / funciones deben tener un return.
@@ -20,6 +22,9 @@ function App() {
 
         <ListaPacientes 
           pacientes = { pacientes }
+          // Vamos a pasar la funcion seteadora del paciente a continuación y luego, la vamos a pasar al ListadoPacientes para que la lea. Lo debemos hacer de nivel a nivel.
+          setPaciente = { setPaciente }
+          paciente = { paciente }
         />
         
       </div>

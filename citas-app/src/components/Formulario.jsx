@@ -3,7 +3,7 @@ import Error from './Error';
 
 
 //Vamos a extraer la funcion seteadora llamada setPacientes aplicandole un destructuring.
-const Formulario = ({ pacientes, setPacientes }) => {
+const Formulario = ({ pacientes, setPacientes, paciente }) => {
 
 //Vamos a trabajar con nuestro useState y la primer regla para nuestros hooks es colocarlos al principio de nuestros componentes. 
 const[nombre, setNombre] = useState('');   
@@ -17,6 +17,10 @@ const[sintomas, setSintomas] = useState('');
 //Creamos un estado para la validacion del formulario:
 
 const[error, setError] = useState(false);
+
+useEffect(() => {
+
+}, [paciente]) //Despues de la coma tenemos un array vacío, ahí van las dependencias, lo que coloquemos ahí, será el valor que estará revisando cuando cambie y si cambia realiza un re-render. En este ejemplo, este useEffect se ejecutará cuando PACIENTE haya cambiado (cuando se detecte el onClick en el btn editar)
 
 const generarId = () => {
   const random = Math.random().toString(36).substring(2);
@@ -181,7 +185,6 @@ const handleSubmit = (e) => {
           type="submit"
           className="bg-indigo-600 w-full p-3 text-white uppercase font-bold hover:bg-indigo-800 cursor-pointer transition-all"
           value="Agregar paciente"
-          
         />
       </form>
     </div>
