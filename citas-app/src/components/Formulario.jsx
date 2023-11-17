@@ -15,11 +15,13 @@ const[fecha, setFecha] = useState('');
 const[sintomas, setSintomas] = useState('');     
 
 //Creamos un estado para la validacion del formulario:
-
 const[error, setError] = useState(false);
 
 useEffect(() => {
-
+  if( Object.keys(paciente).length > 0 ){
+    console.log('Si hay algo')
+    
+  }
 }, [paciente]) //Despues de la coma tenemos un array vacío, ahí van las dependencias, lo que coloquemos ahí, será el valor que estará revisando cuando cambie y si cambia realiza un re-render. En este ejemplo, este useEffect se ejecutará cuando PACIENTE haya cambiado (cuando se detecte el onClick en el btn editar)
 
 const generarId = () => {
