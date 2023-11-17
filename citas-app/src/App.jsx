@@ -9,7 +9,7 @@ function App() {
   // A continuación, vamos a detallar la varable y la fn seteadora de dicha variable, para editar al paciente:
   const [paciente, setPaciente] = useState({});
 
-  return (
+  return ( 
     //Todos los componentes / funciones deben tener un return.
     <div className="container mx-auto mt-20">
       <Header/>
