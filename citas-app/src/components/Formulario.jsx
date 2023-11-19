@@ -3,7 +3,7 @@ import Error from './Error';
 
 
 //Vamos a extraer la funcion seteadora llamada setPacientes aplicandole un destructuring.
-const Formulario = ({ pacientes, setPacientes, paciente }) => {
+const Formulario = ({ pacientes, setPacientes, paciente, setPaciente }) => {
 
 //Vamos a trabajar con nuestro useState y la primer regla para nuestros hooks es colocarlos al principio de nuestros componentes. 
 const[nombre, setNombre] = useState('');   
@@ -19,9 +19,12 @@ const[error, setError] = useState(false);
 
 useEffect(() => {
   if( Object.keys(paciente).length > 0 ){
-    console.log('Si hay algo')
-    
-  }
+    setNombre(paciente.nombre)
+    setDueño(paciente.dueño)
+    setEmail(paciente.email)
+    setFecha(paciente.fecha)
+    setSintomas(paciente.sintomas)
+  } 
 }, [paciente]) //Despues de la coma tenemos un array vacío, ahí van las dependencias, lo que coloquemos ahí, será el valor que estará revisando cuando cambie y si cambia realiza un re-render. En este ejemplo, este useEffect se ejecutará cuando PACIENTE haya cambiado (cuando se detecte el onClick en el btn editar)
 
 const generarId = () => {
@@ -50,12 +53,23 @@ const handleSubmit = (e) => {
       dueño,
       email,
       fecha, 
-      sintomas,
-      id: generarId()
+      sintomas
     }
 
-    //A continuacion, con la funcion seteadora de paciente decimos que haga una copia de lo que ya hay en pacientes y le agrega el nuevo objeto.
-    setPacientes([ ...pacientes, objetoPaciente ]);
+    if(paciente.id){
+      objetoPaciente.id = paciente.id
+      //Editando el registro
+      const pacientesActualizados = pacientes.map( pacienteState => pacienteState.id === paciente.id ? objetoPaciente : pacienteState )
+
+      setPacientes(pacientesActualizados)
+      setPaciente({})
+
+    } else {
+      //Nuevo registro.A continuacion, con la funcion seteadora de paciente decimos que haga una copia de lo que ya hay en pacientes y le agrega el nuevo objeto.
+      objetoPaciente.id = generarId()
+      setPacientes([ ...pacientes, objetoPaciente ]);
+    }
+
 
     
     //A continuacion vamos a reiniciar el formulario colocando todos los campos como str vacios.
@@ -186,7 +200,7 @@ const handleSubmit = (e) => {
         <input
           type="submit"
           className="bg-indigo-600 w-full p-3 text-white uppercase font-bold hover:bg-indigo-800 cursor-pointer transition-all"
-          value="Agregar paciente"
+          value={ 'paciente.id' ? 'Editar Paciente' : 'Agregar Paciente' }
         />
       </form>
     </div>
