@@ -1,6 +1,6 @@
 import Paciente from "./Paciente";
 
-  const ListaPacientes = ({ pacientes, setPaciente }) => { //setPaciente fn seteadora del paciente
+  const ListadoPacientes = ({ pacientes, setPaciente, eliminarPaciente }) => { //setPaciente fn seteadora del paciente
 
 
   return (
@@ -20,6 +20,7 @@ import Paciente from "./Paciente";
             key = { paciente.id } 
             paciente = { paciente }
             setPaciente = { setPaciente } //Cuando lo pudimos leer a la fn seteadora, la pasamos acá
+            eliminarPaciente = { eliminarPaciente }
             />
           ))}
         </>
@@ -36,4 +37,4 @@ import Paciente from "./Paciente";
   );
 };
 
-export default ListaPacientes;
+export default ListadoPacientes;
