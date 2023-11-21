@@ -200,7 +200,7 @@ const handleSubmit = (e) => {
         <input
           type="submit"
           className="bg-indigo-600 w-full p-3 text-white uppercase font-bold hover:bg-indigo-800 cursor-pointer transition-all"
-          value={ 'paciente.id' ? 'Editar Paciente' : 'Agregar Paciente' }
+          value={ paciente.id ? 'Editar Paciente' : 'Agregar Paciente' }
         />
       </form>
     </div>
