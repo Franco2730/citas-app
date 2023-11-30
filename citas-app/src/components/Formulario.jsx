@@ -82,8 +82,10 @@ const handleSubmit = (e) => {
      
        
   return (     
-    <div className="md:w-1/2 lg:w-2/5 mx-5">
-      <h2 className="font-black text-3xl text-center">
+    <div className="md:w-1/2 lg:w-2/5 mx-5 relative">
+    <div className="absolute inset-0 bg-gray-200 bg-opacity-75"></div>
+    <div className="relative z-10">
+      <h2 className="font-black text-3xl text-center to-black">
         Seguimiento Pacientes:
       </h2>
 
@@ -203,6 +205,7 @@ const handleSubmit = (e) => {
           value={ paciente.id ? 'Editar Paciente' : 'Agregar Paciente' }
         />
       </form>
+    </div>
     </div>
   );
 };
